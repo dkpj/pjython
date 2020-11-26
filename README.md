@@ -17,9 +17,33 @@ This also enables a Docker dev environment with a bind mount between the docker 
 
 ### Development
 
-On windows run: `C:\pjython> run-dev.cmd`
+On windows run:
+```
+C:\pjython> run-dev.cmd
+```
 
-*not tested* On linux run: `$ run-dev.sh` 
+*not tested* On linux run: 
+```
+$ run-dev.sh
+```
+
+Execute curl command:
+
+```
+curl --location --request GET 'http://localhost:8080/v2/pet/123' --header 'api_key: test_key'
+```
+
+Remove the "REMOVE ME" text with your favorite editor, and watch the change take effect immediately. It's in:
+```
+app/be/swagger_server/pet_controller.py
+```
+
+Execute curl command again to verify the change:
+
+```
+curl --location --request GET 'http://localhost:8080/v2/pet/123' --header 'api_key: test_key'
+```
+
 
 ### Start container (no dev)
 
