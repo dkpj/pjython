@@ -1,2 +1,3 @@
 app/swagger_server.egg-info/
 app/dist/
+__pycache__
