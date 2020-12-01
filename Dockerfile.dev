@@ -22,8 +22,8 @@ RUN ls && mkdir src-gen
 RUN java -jar openapi-generator-cli.jar generate \
 -i oas-spec.yaml \
 -o src-gen \
--g python-flask
-
+-g python-flask \
+-t templates
 
 
 #
