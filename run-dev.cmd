@@ -7,12 +7,9 @@ docker build --no-cache -f Dockerfile.dev -t pjython .
 REM start container, add file share and set PYTHONPATH
 docker run -d --name pjython -it ^
 -v %cd%/app:/app/fs ^
--p 127.0.0.1:8080:5500/tcp ^
+-p 127.0.0.1:8080:8080/tcp ^
 --env PYTHONPATH=/app/src-gen ^
 --rm pjython
-
-REM Install python dependencies
-docker exec pjython pip3 install -r /app/src-gen/requirements.txt
 
 REM install application
 docker exec pjython python3 /app/src-gen/setup.py install 
