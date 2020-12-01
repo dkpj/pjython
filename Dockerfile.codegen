@@ -9,7 +9,7 @@ WORKDIR /app
 COPY app/be/oas/petstore/oas-spec.yaml .
 
 ## ADD templates
-COPY app/be/oas/templates /app/templates
+#COPY app/be/oas/templates /app/templates
 
 
 ## Generate code
@@ -23,14 +23,3 @@ RUN java -jar openapi-generator-cli.jar generate \
 -i oas-spec.yaml \
 -o src-gen \
 -g python-flask
-
-
-
-#
-# python image
-#
-FROM python:3
-
-WORKDIR /app
-
-COPY --from=pjython-codegen /app/src-gen /app/src-gen/
