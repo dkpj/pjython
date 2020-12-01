@@ -194,8 +194,6 @@ paths:
         "404":
           description: Pet not found
           content: {}
-      security:
-      - api_key: []
       x-openapi-router-controller: openapi_server.controllers.pet_controller
     post:
       tags:
@@ -299,8 +297,6 @@ paths:
                   type: integer
                   format: int32
                 x-content-type: application/json
-      security:
-      - api_key: []
       x-openapi-router-controller: openapi_server.controllers.store_controller
   /store/order:
     post:
@@ -783,10 +779,3 @@ components:
           type: string
           description: file to upload
           format: binary
-  securitySchemes:
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
-      x-apikeyInfoFunc: openapi_server.controllers.authorization_controller.check_api_key
-
